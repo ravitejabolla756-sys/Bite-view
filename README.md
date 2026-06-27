@@ -1,5 +1,36 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## BiteView QR AR Viewer
+
+This website includes the public QR viewer route used by the Flutter app:
+
+```txt
+https://ar.biteview.app/<dish_id>
+```
+
+The route fetches the dish from Supabase, verifies `model_status = FINISHED`, and displays the `.glb` file with a browser AR-capable `<model-viewer>`.
+
+Create `.env.local` from `.env.example`:
+
+```bash
+SUPABASE_URL=https://rehylomzhmmzcfxqlgxx.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=your_server_only_service_role_key
+```
+
+Deploy this app to Vercel and add the custom domain:
+
+```txt
+ar.biteview.app
+```
+
+In your DNS provider, point:
+
+```txt
+Type: CNAME
+Name: ar
+Value: cname.vercel-dns.com
+```
+
 ## Getting Started
 
 First, run the development server:
